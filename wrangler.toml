@@ -1,0 +1,7 @@
+[build]
+command = "npm run build:cf"
+output_directory = "out"
+
+[build.environment]
+NODE_VERSION = "20.9.0"
+NEXT_DISABLE_ESLINT = "1" 

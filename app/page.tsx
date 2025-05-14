@@ -8,13 +8,12 @@ import DemoSection from "@/components/sections/DemoSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
-import Layout from "@/components/layout/Layout";
 
 export const dynamic = "force-static";
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <HeroSection />
       <PioneeringSection />
       <FeaturesSection />
@@ -25,6 +24,6 @@ export default function Home() {
       <TestimonialsSection />
       <FAQSection />
       <CTASection />
-    </Layout>
+    </>
   );
 }

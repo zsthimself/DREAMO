@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import { OrganizationStructuredData, WebsiteStructuredData } from "@/components/ui/structured-data";
 import Head from "./head";
 
@@ -61,6 +62,11 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <Head />
       <body className="font-sans">
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
         <OrganizationStructuredData 
           name="ByteDance - DreamO"
           url="https://dreamo.pro"
@@ -76,7 +82,6 @@ export default function RootLayout({
           url="https://dreamo.pro"
           description="DreamO is an advanced text-to-image generation AI model developed by ByteDance, offering high-quality image synthesis with exceptional detail and creative capabilities."
         />
-        {children}
       </body>
     </html>
   );

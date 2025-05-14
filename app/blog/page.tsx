@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import BlogCard from "@/components/blog/BlogCard";
-import Layout from "@/components/layout/Layout";
 
 export const metadata: Metadata = {
   title: "DreamO Blog - Latest Updates and Insights",
@@ -51,31 +50,29 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <Layout>
-      <div className="container mx-auto px-4 py-16">
-        <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            DreamO Blog
-          </h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Latest news, technical insights, and implementation guides for ByteDance's DreamO image customization framework
-          </p>
-        </div>
-
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
-            <BlogCard
-              key={post.slug}
-              title={post.title}
-              slug={post.slug}
-              image={post.image}
-              date={post.date}
-              readTime={post.readTime}
-              excerpt={post.excerpt}
-            />
-          ))}
-        </div>
+    <div className="container mx-auto px-4 py-16">
+      <div className="mx-auto max-w-2xl text-center">
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+          DreamO Blog
+        </h1>
+        <p className="mt-4 text-lg text-gray-600">
+          Latest news, technical insights, and implementation guides for ByteDance's DreamO image customization framework
+        </p>
       </div>
-    </Layout>
+
+      <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => (
+          <BlogCard
+            key={post.slug}
+            title={post.title}
+            slug={post.slug}
+            image={post.image}
+            date={post.date}
+            readTime={post.readTime}
+            excerpt={post.excerpt}
+          />
+        ))}
+      </div>
+    </div>
   );
 } 
