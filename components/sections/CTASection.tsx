@@ -2,23 +2,23 @@ import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
   return (
-    <section className="bg-indigo-600 py-20">
+    <section className="bg-blue-600 py-20">
       <div className="container mx-auto px-4 text-center">
         <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">
-          Ready to Experience the Future of Voice AI with Nari Labs?
+          Ready to Create Personalized Images with DreamO?
         </h2>
-        <p className="mx-auto mb-8 max-w-2xl text-lg text-indigo-100">
-          Join the Nari Labs community today and explore the most advanced open-source text-to-speech technology for free. No credit card required, start integrating high-quality voice into your applications right away.
+        <p className="mx-auto mb-8 max-w-2xl text-lg text-blue-100">
+          Start using ByteDance's unified image customization framework today. Generate high-fidelity images with multiple customization options for IP adaptation, ID preservation, virtual try-on, and style transfer.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a href="https://huggingface.co/spaces/nari-labs/Dia-1.6B" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
-              Try Nari Labs
+          <a href="https://huggingface.co/spaces/ByteDance/DreamO" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+              Try DreamO Demo
             </Button>
           </a>
-          <a href="https://github.com/nari-labs/dia" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
-              View Documentation
+          <a href="https://github.com/bytedance/DreamO" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+              View on GitHub
             </Button>
           </a>
         </div>

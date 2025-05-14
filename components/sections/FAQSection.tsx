@@ -3,34 +3,34 @@ import FAQItem from "../ui/FAQItem";
 const FAQSection = () => {
   const faqs = [
     {
-      question: "What is Nari Labs' primary focus at Nari Labs?",
+      question: "What is DreamO and how does it differ from other image generation models?",
       answer:
-        "Nari Labs is a South Korean startup founded by undergraduate students, including Toby Kim, focused on advancing Nari Labs text-to-speech (TTS) technology. Nari Labs' primary product is Dia, a 1.6 billion parameter open-source TTS model designed to generate ultra-realistic dialogue from text transcripts. The Nari Labs team started exploring speech AI just three months before Nari Labs Dia's release, inspired by Google's NotebookLM podcast feature, and built the Nari Labs technology with zero funding, leveraging Google's TPU Research Cloud and Hugging Face's ZeroGPU grant for Nari Labs development.",
+        "DreamO is an advanced text-to-image generation model developed by ByteDance Research that introduces a unified framework for image customization. What sets DreamO apart is its ability to handle multiple customization tasks (IP adaptation, ID preservation, virtual try-on, and style transfer) within a single framework, whereas previous approaches typically required separate specialized models for each task. DreamO achieves higher fidelity character preservation through VAE-based feature encoding and effectively prevents conflicts between multiple conditions thanks to its innovative feature routing constraint.",
     },
     {
-      question: "What makes Nari Labs Dia different from other text-to-speech solutions?",
+      question: "What types of customization tasks does DreamO support?",
       answer:
-        "Nari Labs Dia stands out for its ability to generate ultra-realistic dialogue with customizable speaker tones, emotional inflections, and nonverbal cues like laughter, coughs, and sighs. Nari Labs technology supports zero-shot voice cloning from just seconds of reference audio, compared to traditional methods requiring hours of samples. The Nari Labs model performs in real-time on a single GPU and is completely open-source under the Apache 2.0 license, making advanced Nari Labs voice AI accessible to developers, researchers, and content creators without the limitations of proprietary solutions.",
+        "DreamO supports four main customization tasks: (1) IP Adaptation - preserving the appearance of characters, objects, and animals; (2) ID Preservation - maintaining facial identity while generating diverse images; (3) Virtual Try-On - adding clothing items like tops, bottoms, glasses, and hats to generated images; and (4) Style Transfer - applying artistic styles to generated images. One of DreamO's key strengths is its ability to combine multiple conditions (e.g., ID + Try-On) to create more creative and personalized images with precise control.",
     },
     {
-      question: "What are the hardware requirements for running Nari Labs Dia?",
+      question: "What are the hardware requirements for running DreamO?",
       answer:
-        "Nari Labs Dia currently runs in real-time on a single GPU, such as an NVIDIA A4000, generating approximately 40 tokens per second with Nari Labs technology. It requires about 10GB of VRAM for optimal performance of Nari Labs Dia. Nari Labs is actively working on CPU support and quantization to make the Nari Labs technology more accessible across different hardware configurations. The Nari Labs model is designed to be relatively efficient compared to larger commercial alternatives, balancing performance with quality for Nari Labs users.",
+        "For optimal performance, DreamO traditionally requires a GPU with at least 16GB VRAM. However, ByteDance has recently added support for consumer-grade GPUs through two optimization methods: (1) For 24GB GPUs, users can run DreamO with 8-bit quantization using the '--int8' flag; (2) For 16GB GPUs, both 8-bit quantization and CPU offloading can be enabled with the '--int8 --offload' flags. Note that CPU offloading significantly reduces inference speed and should only be used when necessary. The model also supports the accelerated FLUX LoRA variant (FLUX-turbo) by default, reducing inference to 12 steps instead of 25+.",
     },
     {
-      question: "How can I access and use Nari Labs Dia?",
+      question: "How can I access and use DreamO?",
       answer:
-        "Nari Labs Dia is available as an open-source project on GitHub and Hugging Face from Nari Labs. You can download the Nari Labs pretrained checkpoints, inference code, and access a Gradio-based demo for easy testing of Nari Labs Dia. Nari Labs provides documentation for installation and implementation, making Nari Labs technology accessible for developers with varying levels of expertise. The Apache 2.0 license allows for both personal and commercial use of Nari Labs Dia, though Nari Labs prohibits misuse such as impersonation or generating deceptive content with Nari Labs technology.",
+        "DreamO is available as an open-source project on GitHub under the Apache 2.0 license. You can clone the repository at github.com/bytedance/DreamO, which includes model weights, inference code, and a Gradio-based demo for easy testing. Installation requires Python 3.10 and the dependencies listed in the requirements.txt file. For quick inference, you can also access DreamO through the Hugging Face Space at huggingface.co/spaces/ByteDance/DreamO, which provides a user-friendly interface for generating images without local installation.",
     },
     {
-      question: "What are Nari Labs' future plans for Nari Labs Dia?",
+      question: "What parameters should I adjust to get better results with DreamO?",
       answer:
-        "Nari Labs aims to develop a consumer version of Nari Labs Dia with a social platform for sharing voice creations, expand Nari Labs language support beyond English, and release a comprehensive technical report about Nari Labs technology. The Nari Labs team is also working on optimizing the Nari Labs model for Docker deployment, improving inference speed, and enhancing memory efficiency of Nari Labs Dia. They welcome community contributions through their Nari Labs Discord channel and are exploring partnerships to further develop the Nari Labs technology while maintaining its open-source accessibility.",
+        "DreamO's output quality can be fine-tuned by adjusting several key parameters: (1) Guidance Scale - For overly glossy or over-saturated images, try lowering the guidance scale; for poor text generation or limb distortion, try increasing the guidance scale; (2) Steps - The default setting with Turbo enabled is 12 steps, which provides a good balance of quality and speed; (3) Prompts - Descriptive and specific text prompts help guide the generation process; (4) Task Selection - Choose the appropriate task (IP, ID, Try-On, Style) based on your specific needs, or combine multiple tasks for more creative control. Experimentation with these parameters will help achieve optimal results.",
     },
     {
-      question: "What are the ethical considerations around using Nari Labs Dia?",
+      question: "Are there any limitations or known issues with the current version of DreamO?",
       answer:
-        "Nari Labs prohibits using Nari Labs Dia for impersonation or generating deceptive content, though they acknowledge the current limitations in Nari Labs safeguards. The Nari Labs team isn't legally responsible for misuse but encourages ethical application of the Nari Labs technology. The potential for creating ultra-realistic voice content with Nari Labs Dia raises concerns about disinformation and unethical voice cloning, which Nari Labs addresses through Nari Labs community guidelines and ongoing research into detection and prevention methods. Nari Labs balances innovation with responsibility, recognizing both the creative potential and possible risks of advanced Nari Labs voice AI.",
+        "While DreamO represents a significant advancement in image customization, there are some known limitations in the current version: (1) Style consistency is currently less stable compared to other tasks, and style cannot be combined with other conditions in the current release; (2) Some users may encounter over-saturation and 'plastic-face' issues, though the latest model update has significantly mitigated these problems; (3) When using multiple conditions, there can still be occasional conflicts between different elements; (4) For consumer-grade GPUs using quantization and CPU offloading, there may be some quality degradation and significantly slower inference times. The ByteDance team is actively working on addressing these limitations in future releases.",
     },
   ];
 
@@ -38,7 +38,7 @@ const FAQSection = () => {
     <section className="bg-gray-50 py-20" id="faq">
       <div className="container mx-auto px-4">
         <h2 className="mb-16 text-center text-3xl font-bold text-gray-900 md:text-4xl">
-          Frequently Asked Questions About Nari Labs
+          Frequently Asked Questions About DreamO
         </h2>
 
         <div className="mx-auto max-w-3xl">

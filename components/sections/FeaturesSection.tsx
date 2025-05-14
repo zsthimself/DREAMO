@@ -3,24 +3,24 @@ import FeatureCard from "../ui/FeatureCard";
 const FeaturesSection = () => {
   const features = [
     {
-      icon: "/icons/microphone.svg",
-      title: "Nari Labs Ultra-Realistic Dialogue Synthesis",
-      description: "Nari Labs Dia produces natural-sounding conversations with customizable speaker tones, emotional inflections, and nonverbal cues like laughter, coughs, sighs, and even screams. This level of expressiveness creates an immersive audio experience that rivals proprietary solutions. Whether you need subtle emotional nuances or dramatic vocal performances, Nari Labs Dia delivers exceptional quality that enhances storytelling, gaming experiences, and virtual assistants with Nari Labs technology.",
+      icon: "/icons/customize.svg",
+      title: "Unified Image Customization Framework",
+      description: "DreamO introduces a groundbreaking unified framework that handles multiple image customization tasks simultaneously. Unlike previous approaches requiring separate specialized models, DreamO integrates IP adaptation, ID preservation, virtual try-on, and style transfer in one coherent system. This unified approach simplifies implementation while ensuring consistent high-quality results across different customization needs.",
     },
     {
-      icon: "/icons/clone.svg",
-      title: "Nari Labs Zero-Shot Voice Cloning",
-      description: "Nari Labs Dia supports efficient voice cloning, replicating a speaker's voice from just seconds of reference audio. Traditional methods require hours of samples, but Nari Labs' technology needs only a brief clip to capture voice characteristics. This Nari Labs breakthrough makes personalized voice experiences more accessible for developers and content creators, enabling custom voice assistants, localized content, and personalized audio experiences with minimal setup time using Nari Labs solutions.",
+      icon: "/icons/user-clone.svg",
+      title: "High-Fidelity Character Preservation",
+      description: "DreamO excels at preserving character identity with remarkable fidelity. Through VAE-based feature encoding, it achieves higher fidelity than previous adapter methods, with a distinct advantage in preserving character identity across various poses, expressions, and scenarios. This makes DreamO ideal for creating consistent character representations in different creative contexts.",
     },
     {
-      icon: "/icons/chip.svg",
-      title: "Nari Labs Real-Time Performance",
-      description: "The Nari Labs model streams in real-time on a single GPU (e.g., NVIDIA A4000, ~40 tokens/second) and requires ~10GB VRAM. Nari Labs is actively working on CPU support and quantization to make Nari Labs Dia accessible on more devices. This Nari Labs performance optimization ensures Nari Labs Dia can be integrated into interactive applications, games, and streaming platforms where responsive audio generation is critical for user experience with Nari Labs technology.",
+      icon: "/icons/integration.svg",
+      title: "Multi-Condition Generation",
+      description: "DreamO's feature routing constraint effectively prevents entanglement when handling multiple inputs. This breakthrough allows users to combine multiple conditions (like ID, IP, and try-on) to generate more creative images without conflicts between different elements. The model successfully mitigates issues that typically arise when mixing different customization requirements in the same image.",
     },
     {
-      icon: "/icons/github.svg",
-      title: "Nari Labs Open-Source Accessibility",
-      description: "Available on GitHub and Hugging Face under the Apache 2.0 license, Nari Labs Dia includes pretrained checkpoints, inference code, and a Gradio-based demo for easy testing. Nari Labs believes in democratizing voice AI technology, making advanced speech synthesis available to everyone from independent developers to research institutions. The Nari Labs open-source approach encourages community contributions, accelerating innovation in Nari Labs voice technology.",
+      icon: "/icons/open-source.svg",
+      title: "Open-Source Accessibility",
+      description: "Available on GitHub under the Apache 2.0 license, DreamO includes model weights, inference code, and a Gradio-based demo for easy testing. ByteDance has also added support for 8-bit quantization and CPU offload to enable execution on consumer-grade GPUs (16GB or 24GB), making advanced AI image customization more accessible to users with standard hardware.",
     },
   ];
 
@@ -28,7 +28,7 @@ const FeaturesSection = () => {
     <section className="bg-white py-20" id="features">
       <div className="container mx-auto px-4">
         <h2 className="mb-16 text-center text-4xl font-bold text-gray-900">
-          Why Choose Nari Labs
+          Why Choose DreamO
         </h2>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
