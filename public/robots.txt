@@ -3,4 +3,4 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 
-Sitemap: https://narilabs.com/sitemap.xml 
+Sitemap: https://dreamo.pro/sitemap.xml 

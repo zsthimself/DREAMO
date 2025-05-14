@@ -8,7 +8,7 @@ const nextConfig = {
   images: { unoptimized: true },
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
-  assetPrefix: isProd ? 'https://naridiaai.pro' : '',
+  assetPrefix: isProd ? 'https://dreamo.pro' : '',
 };
 
 export default nextConfig;

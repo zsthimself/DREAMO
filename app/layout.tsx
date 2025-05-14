@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
-  metadataBase: new URL('https://dreamo.ai'),
+  metadataBase: new URL('https://dreamo.pro'),
   alternates: {
     canonical: '/',
   },
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://dreamo.ai',
+    url: 'https://dreamo.pro',
     siteName: 'DreamO',
     title: 'DreamO - ByteDance AI Text-to-Image Model',
     description: 'Advanced AI text-to-image generation model with exceptional quality and creative capabilities.',
     images: [
       {
-        url: 'https://dreamo.ai/banner.png',
+        url: 'https://dreamo.pro/banner.png',
         width: 1200,
         height: 630,
         alt: 'DreamO Banner',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'DreamO - ByteDance AI Text-to-Image Model',
     description: 'Advanced AI text-to-image generation model with exceptional quality and creative capabilities.',
-    images: ['https://dreamo.ai/banner.png'],
+    images: ['https://dreamo.pro/banner.png'],
     creator: '@ByteDance',
   }
 };
@@ -63,8 +63,8 @@ export default function RootLayout({
       <body className="font-sans">
         <OrganizationStructuredData 
           name="ByteDance - DreamO"
-          url="https://dreamo.ai"
-          logo="https://dreamo.ai/logo.svg"
+          url="https://dreamo.pro"
+          logo="https://dreamo.pro/logo.svg"
           sameAs={[
             "https://github.com/bytedance",
             "https://twitter.com/bytedance",
@@ -73,7 +73,7 @@ export default function RootLayout({
         />
         <WebsiteStructuredData
           name="DreamO"
-          url="https://dreamo.ai"
+          url="https://dreamo.pro"
           description="DreamO is an advanced text-to-image generation AI model developed by ByteDance, offering high-quality image synthesis with exceptional detail and creative capabilities."
         />
         {children}

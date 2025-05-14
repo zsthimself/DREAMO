@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "cloudflare:build": "next build",
-    "build:no-lint": "NEXT_DISABLE_ESLINT=1 next build"
+    "build:no-lint": "cross-env NEXT_DISABLE_ESLINT=1 next build",
+    "build:cf": "NEXT_DISABLE_ESLINT=1 next build"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.2",
@@ -27,6 +28,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
     "tailwindcss": "^4",

@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Card, CardContent } from "../ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 interface BlogCardProps {
   title: string;
@@ -22,14 +23,23 @@ const BlogCard = ({
   readTime,
   excerpt,
 }: BlogCardProps) => {
+  const [imgSrc, setImgSrc] = useState(image);
+  
+  // 处理图片加载错误
+  const handleError = () => {
+    // 使用默认图片
+    setImgSrc("/banner.png");
+  };
+
   return (
     <Link href={`/blog/${slug}`}>
       <Card className="overflow-hidden rounded-lg border border-gray-200 transition-all duration-300 hover:border-blue-500 hover:shadow-lg">
-        <div className="aspect-video relative overflow-hidden">
+        <div className="aspect-video relative overflow-hidden bg-blue-100">
           <Image
-            src={image}
+            src={imgSrc}
             alt={title}
             fill
+            onError={handleError}
             className="object-cover transition-transform duration-500 hover:scale-105"
           />
         </div>
