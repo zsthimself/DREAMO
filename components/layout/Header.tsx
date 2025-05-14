@@ -19,12 +19,12 @@ const Header = () => {
         <Link href="/" className="flex items-center gap-2">
           <Image 
             src="/logo.svg" 
-            alt="Nari Labs Logo" 
+            alt="DreamO Logo" 
             width={40} 
             height={40} 
             className="rounded-md"
           />
-          <span className="text-xl font-semibold text-gray-900">Nari Labs</span>
+          <span className="text-xl font-semibold text-gray-900">DreamO</span>
         </Link>
         
         <nav className="hidden md:flex items-center gap-6">
@@ -70,7 +70,7 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-4">
           <LanguageSwitcher />
           <Link 
-            href="https://huggingface.co/spaces/nari-labs/Dia-1.6B" 
+            href="https://huggingface.co/spaces/ByteDance/DreamO" 
             target="_blank" 
             rel="noopener noreferrer"
           >
@@ -154,7 +154,7 @@ const Header = () => {
                 <LanguageSwitcher />
               </div>
               <Link 
-                href="https://huggingface.co/spaces/nari-labs/Dia-1.6B" 
+                href="https://huggingface.co/spaces/ByteDance/DreamO" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full"
@@ -171,4 +171,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;

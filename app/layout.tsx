@@ -5,16 +5,16 @@ import { OrganizationStructuredData, WebsiteStructuredData } from "@/components/
 import Head from "./head";
 
 export const metadata: Metadata = {
-  title: "Nari Labs - Open-Source Text-to-Speech AI Platform",
-  description: "Nari Labs provides high-quality open-source TTS technology, supporting multiple languages and voices, offering developers simple and easy-to-use voice synthesis solutions.",
-  keywords: "text-to-speech, TTS, AI voice, speech synthesis, open source TTS, voice AI, Nari Labs",
-  authors: [{ name: "Nari Labs Team" }],
-  creator: "Nari Labs",
-  publisher: "Nari Labs",
+  title: "DreamO - ByteDance AI Text-to-Image Model",
+  description: "DreamO is an advanced text-to-image generation AI model developed by ByteDance, offering high-quality image synthesis with exceptional detail and creative capabilities.",
+  keywords: "DreamO, AI, text-to-image, image generation, ByteDance, AI model, deep learning, generative AI",
+  authors: [{ name: "ByteDance Research Team" }],
+  creator: "ByteDance",
+  publisher: "ByteDance",
   formatDetection: {
     telephone: false,
   },
-  metadataBase: new URL('https://naridiaai.pro'),
+  metadataBase: new URL('https://dreamo.ai'),
   alternates: {
     canonical: '/',
   },
@@ -28,25 +28,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://naridiaai.pro',
-    siteName: 'Nari Labs',
-    title: 'Nari Labs - Open-Source Text-to-Speech AI Platform',
-    description: 'High-quality open-source TTS technology supporting multiple languages and voices.',
+    url: 'https://dreamo.ai',
+    siteName: 'DreamO',
+    title: 'DreamO - ByteDance AI Text-to-Image Model',
+    description: 'Advanced AI text-to-image generation model with exceptional quality and creative capabilities.',
     images: [
       {
-        url: 'https://naridiaai.pro/banner.png',
+        url: 'https://dreamo.ai/banner.png',
         width: 1200,
         height: 630,
-        alt: 'Nari Labs Banner',
+        alt: 'DreamO Banner',
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nari Labs - Open-Source TTS AI',
-    description: 'High-quality open-source text-to-speech technology supporting multiple languages and voices.',
-    images: ['https://naridiaai.pro/banner.png'],
-    creator: '@narilabs',
+    title: 'DreamO - ByteDance AI Text-to-Image Model',
+    description: 'Advanced AI text-to-image generation model with exceptional quality and creative capabilities.',
+    images: ['https://dreamo.ai/banner.png'],
+    creator: '@ByteDance',
   }
 };
 
@@ -62,19 +62,19 @@ export default function RootLayout({
       <Head />
       <body className="font-sans">
         <OrganizationStructuredData 
-          name="Nari Labs"
-          url="https://naridiaai.pro"
-          logo="https://naridiaai.pro/logo.svg"
+          name="ByteDance - DreamO"
+          url="https://dreamo.ai"
+          logo="https://dreamo.ai/logo.svg"
           sameAs={[
-            "https://github.com/nari-labs",
-            "https://twitter.com/narilabs",
-            "https://linkedin.com/company/nari-labs"
+            "https://github.com/bytedance",
+            "https://twitter.com/bytedance",
+            "https://linkedin.com/company/bytedance"
           ]}
         />
         <WebsiteStructuredData
-          name="Nari Labs"
-          url="https://naridiaai.pro"
-          description="Nari Labs provides high-quality open-source TTS technology, supporting multiple languages and voices, offering developers simple and easy-to-use voice synthesis solutions."
+          name="DreamO"
+          url="https://dreamo.ai"
+          description="DreamO is an advanced text-to-image generation AI model developed by ByteDance, offering high-quality image synthesis with exceptional detail and creative capabilities."
         />
         {children}
       </body>
