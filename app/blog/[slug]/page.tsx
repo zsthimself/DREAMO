@@ -1,510 +1,532 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import Layout from "@/components/layout/Layout";
-import { ArticleStructuredData } from "@/components/ui/structured-data";
 import BlogPostImage from "@/components/blog/BlogPostImage";
 
-export const dynamic = "force-static";
-
-// Blog post interface definition
-interface BlogPost {
-  title: string;
-  date: string;
-  author: string;
-  category: string;
-  imageUrl: string;
-  content: string;
-}
-
-// Blog post content data (in a real project, this might come from a database or CMS)
-const blogPosts: Record<string, BlogPost> = {
-  "dia-by-nari-labs-new-leader-in-ai-voice": {
-    title: "Dia by Nari Labs: The New Leader in AI Voice Technology",
-    date: "May 15, 2024",
-    author: "Nari Labs Team",
-    category: "AI Voice Technology",
-    imageUrl: "/blog/dia-nari-labs-voice.svg",
-    content: `
-      <h2>The Dark Horse That's Redefining AI Voice Capabilities</h2>
-      
-      <p>
-        In recent weeks, a significant shift has occurred in the AI voice technology landscape with the emergence of Dia by Nari Labs. This newcomer, developed by a small team of relatively inexperienced developers, has quickly established itself as a formidable competitor to industry giants like Eleven Labs and Sesame. According to experts who have tested the technology, Dia isn't just competing with these established players—it's surpassing them in critical areas of voice synthesis.
-      </p>
-      
-      <h3>An Unexpected Origin Story</h3>
-      
-      <p>
-        What makes Dia's rise particularly compelling is its grassroots development story. Unlike many AI breakthroughs that emerge from well-funded labs or technology giants, Dia was created as a passion project by two developers with relatively limited experience. The founders were inspired by the capabilities of Notebook LM but found themselves constrained by the limitations of existing technologies.
-      </p>
-      
-      <p>
-        Perhaps most remarkable is how the project was built: entirely open-source, with no external funding. The team leveraged TPU processing power made available by Google and utilized resources from Hugging Face's ZeroGPU grant program. This bootstrap approach stands in stark contrast to the typical AI development model that relies on massive funding rounds and proprietary technology.
-      </p>
-      
-      <blockquote>
-        "This is a true AI marketing navigator type of story in that it started as an AI passion project that was inspired by the capabilities of Notebook LM and then was somewhat driven by the limitations of the existing technologies like Notebook LM and like Eleven Labs."
-      </blockquote>
-      
-      <h3>What Sets Dia Apart: Emotional Expression and Non-verbal Communication</h3>
-      
-      <p>
-        While most text-to-speech models focus on accurately converting text into spoken words, Dia distinguishes itself through its extraordinary ability to capture the subtle nuances of human speech. Industry experts who have conducted comparative testing between Dia and market leaders like Eleven Labs have noted a significant gap in quality, particularly when it comes to emotional expression.
-      </p>
-      
-      <p>
-        The most striking differentiator is Dia's handling of non-verbal sounds—an aspect of communication that other AI voice models typically struggle with. Through a simple yet revolutionary text tag system, Dia can incorporate laughs, coughs, throat clears, and other non-verbal elements that make human speech sound natural and authentic.
-      </p>
-      
-      <blockquote>
-        "It's the small subtle sounds, the small intonation and rhythms that really make all the difference... specifically with one really amazing feature and that is the ability to insert nonverbal sounds like coughs or throat clears, laughs all via text tag which is pretty remarkable."
-      </blockquote>
-      
-      <p>
-        In direct comparison tests, the difference is immediately apparent. When generating laughter, for instance, competitors like Eleven Labs simply read "haha" as text, while Dia produces a natural-sounding laugh. This capability creates a level of emotional resonance previously unattainable in AI-generated speech.
-      </p>
-      
-      <blockquote>
-        "I think it was pretty clear that Dia was far and away the most natural. Obviously, it's the only one that didn't simply read 'haha'—it actually laughed in a natural way."
-      </blockquote>
-      
-      <h3>Technical Specifications and Accessibility</h3>
-      
-      <p>
-        From a technical standpoint, Dia currently operates with 1.6 billion parameters—an impressive scale considering its bootstrapped development. While this is smaller than some commercial models, the quality achieved suggests highly efficient training and model architecture.
-      </p>
-      
-      <p>
-        Currently, Dia is available through GitHub and Hugging Face repositories, with a demonstration site for testing. This approach prioritizes open access to the technology but comes with trade-offs in terms of user experience and accessibility. Unlike polished commercial platforms like Eleven Labs, working with Dia requires more technical knowledge, making it less immediately accessible to casual users.
-      </p>
-      
-      <blockquote>
-        "Where Dia is absolutely still not really competing with Eleven Labs or the bigger players in the game is on the availability and accessibility of the tool... it's much harder and much more technical to get at with any deep testing capability than an Eleven Labs for instance."
-      </blockquote>
-      
-      <p>
-        The current feature set is relatively streamlined, focusing on core functionality rather than extensive customization options. Users can control speaker tags to delineate between multiple speakers and insert non-verbal tags, but the platform doesn't yet offer the full suite of customization options found in more mature platforms.
-      </p>
-      
-      <h3>Audio Sample Extension: A Promising Capability</h3>
-      
-      <p>
-        Another notable capability that Dia demonstrates is audio sample extension. From a short initial audio clip—as brief as 3 seconds—the model can expand and generate longer content while maintaining the voice characteristics. This feature has significant implications for users who want to maintain consistent voice profiles across multiple scripts or extend limited voice samples.
-      </p>
-      
-      <p>
-        This approach to voice cloning from minimal input represents a powerful tool for content creators who may have limited original audio to work with but need extended voice generation capabilities.
-      </p>
-      
-      <h3>Applications and Future Potential</h3>
-      
-      <p>
-        The implications of Dia's advancements extend across numerous industries and use cases. For marketing professionals, there's enormous potential in creating more engaging audio content, developing customer-facing AI agents, and producing podcast-style content that sounds authentically human.
-      </p>
-      
-      <p>
-        Beyond marketing, the applications range from video game character voices to storytelling applications, movie dubbing, and television show localization. The ability to incorporate natural emotional expression and non-verbal elements opens new creative possibilities that were previously inaccessible with AI voice technology.
-      </p>
-      
-      <blockquote>
-        "A huge application obviously being content creation and specifically when it comes to audio podcasts, otherwise all sorts of voice and any sort of customer-facing agent that you might be using in your marketing or in your sales department... That's not to mention the non-marketing creative use cases like video games and storytelling and movie and television show dubbing."
-      </blockquote>
-      
-      <h3>The Evolving Landscape of AI Voice Technology</h3>
-      
-      <p>
-        Dia's emergence represents a significant inflection point in the development of AI voice technology. By establishing new benchmarks for emotional expression and non-verbal communication, it challenges established players to improve their offerings and accelerates innovation across the industry.
-      </p>
-      
-      <p>
-        The open-source nature of the project also democratizes access to cutting-edge voice technology, potentially enabling a new wave of applications and use cases from developers who previously couldn't afford premium voice services.
-      </p>
-      
-      <h3>Conclusion: A New Chapter in AI Voice Technology</h3>
-      
-      <p>
-        While Dia by Nari Labs is still in the early stages of its development and lacks some of the polished user experience of more established platforms, its core technology represents a remarkable achievement. The gap in quality between Dia and current industry leaders in emotional expression and non-verbal communication suggests we're witnessing the emergence of a new leader in AI voice technology.
-      </p>
-      
-      <p>
-        For content creators, marketers, and technology enthusiasts, Dia offers a glimpse into the future of AI-generated speech—one where the subtle nuances of human communication are preserved rather than flattened. As the platform matures and becomes more accessible, it has the potential to reshape how we think about and interact with AI-generated voice content.
-      </p>
-      
-      <blockquote>
-        "What this does mean is a significant step forward in AI voice in text-to-speech and for us as AI marketing navigators who are creating audio content with AI, that is amazing news."
-      </blockquote>
-    `,
-  },
-  "nari-labs-dia-1-6b-tts-model-review": {
-    title: "Nari Labs DIA-1.6B: A Revolutionary Open-Source TTS Model for Realistic Dialogues",
-    date: "May 10, 2024",
-    author: "Nari Labs Team",
-    category: "AI Technology",
-    imageUrl: "/blog/nari-labs-dia-model.svg",
-    content: `
-      <h2>Introducing DIA-1.6B: The Future of Multi-Speaker Dialogue Generation</h2>
-      
-      <p>
-        In the rapidly evolving landscape of text-to-speech (TTS) technology, Nari Labs has recently released a groundbreaking model that promises to change how we approach dialogue generation. The DIA-1.6B, an open-source and open-weight model designed for local use, offers impressive capabilities in creating realistic multi-speaker dialogues complete with non-verbal communication elements.
-      </p>
-      
-      <h3>Breaking New Ground in Open-Source TTS</h3>
-      
-      <p>
-        The DIA-1.6B model represents a significant advancement in the open-source TTS ecosystem. Unlike many commercial offerings that require subscription fees or cloud-based processing, DIA-1.6B is fully open-source under the Apache 2.0 license, making it highly accessible to developers, hobbyists, and independent creators.
-      </p>
-      
-      <p>
-        What truly sets this model apart is its specialized focus on dialogue generation. While most TTS systems excel at single-voice narration, DIA-1.6B allows users to designate different speakers for different lines in a script, effectively simulating natural conversations or podcast-style interactions. This capability opens up exciting possibilities for content creators, game developers, and multimedia producers looking to add authentic vocal elements to their projects.
-      </p>
-      
-      <h3>Multi-Speaker Dialogue: A Game-Changer for Content Creation</h3>
-      
-      <p>
-        The core functionality of DIA-1.6B is its ability to generate realistic multi-speaker dialogues from transcripts. Users can denote different speakers to handle different lines, creating audio that closely resembles natural conversation flows. This feature is particularly valuable for:
-      </p>
-      
-      <ul>
-        <li><strong>Indie game developers</strong> seeking to add voice acting to cutscenes and character interactions</li>
-        <li><strong>Podcast creators</strong> looking to prototype episodes or create supplemental content</li>
-        <li><strong>Educational content developers</strong> wanting to produce dialogue-based learning materials</li>
-        <li><strong>Accessibility specialists</strong> working to convert written dialogues into audio formats</li>
-      </ul>
-      
-      <p>
-        Initial tests have confirmed that the model handles multiple speakers smoothly, with successful implementation of even a third speaker in dialogue scenarios.
-      </p>
-      
-      <h3>Beyond Words: Non-Verbal Communication</h3>
-      
-      <p>
-        Perhaps one of the most innovative aspects of DIA-1.6B is its support for non-verbal communication elements. The model can generate various non-verbal sounds that significantly enhance the realism of dialogues, including:
-      </p>
-      
-      <ul>
-        <li>Laughter</li>
-        <li>Coughing</li>
-        <li>Throat clearing</li>
-        <li>Other emotional vocalizations</li>
-      </ul>
-      
-      <p>
-        Early testing shows mixed results with some emotional tags, but laughter generation in particular has been noted as "very good." These elements add a layer of authenticity that has typically been missing from AI-generated speech, bringing TTS technology one step closer to mimicking the nuances of human conversation.
-      </p>
-      
-      <h3>Technical Requirements: Running DIA-1.6B Locally</h3>
-      
-      <p>
-        As an open-weight model designed for local deployment, DIA-1.6B requires specific hardware capabilities:
-      </p>
-      
-      <ul>
-        <li><strong>VRAM Requirements:</strong> Approximately 10GB of video RAM for the full version</li>
-        <li><strong>Tested Hardware:</strong> Successfully runs on consumer-grade GPUs like the 3090 series</li>
-        <li><strong>Apple Silicon Compatibility:</strong> Reports indicate successful operation on Apple Silicon machines with sufficient memory</li>
-        <li><strong>Model Size:</strong> The weight files are approximately 6.5GB</li>
-      </ul>
-      
-      <p>
-        During testing, VRAM utilization stabilized around 7.4GB during generation, though total VRAM usage gradually increased throughout extended testing sessions. Generation speed varies based on audio length and the presence of emotional tags.
-      </p>
-      
-      <h3>User Interface and Generation Parameters</h3>
-      
-      <p>
-        The model launches with a Gradio-based web interface that provides a straightforward user experience. Through this UI, users can:
-      </p>
-      
-      <ul>
-        <li>Input dialogue text with speaker designations</li>
-        <li>Include emotional tags for non-verbal elements</li>
-        <li>Adjust generation parameters such as speed factor</li>
-        <li>Set maximum generation length</li>
-      </ul>
-      
-      <p>
-        Preliminary testing suggests that parameter adjustments can significantly impact the quality and characteristics of the generated speech. For instance, increasing the speed factor may alter voice characteristics in unexpected ways, suggesting that users should experiment with these settings to find the optimal configuration for their specific needs.
-      </p>
-      
-      <h3>The Impact of Text Formatting</h3>
-      
-      <p>
-        One interesting observation from early testing is how the model responds to text formatting elements. The DIA-1.6B appears to interpret emotional tags placed in parentheses as cues to generate corresponding sound effects. Additionally, punctuation seems to play an important role in guiding the cadence and tone of the generated speech.
-      </p>
-      
-      <p>
-        This sensitivity to formatting suggests that users might achieve better results by strategically incorporating punctuation and emotional cues in their input text. Future research and community experimentation will likely yield best practices for optimizing text formatting for this model.
-      </p>
-      
-      <h3>Part of a Promising Trend</h3>
-      
-      <p>
-        The release of DIA-1.6B reflects a broader trend in the TTS landscape, where open-source models are steadily improving in quality and capabilities. For hobbyists and professionals who prefer offline, open-source solutions, this upward trajectory is tremendously encouraging.
-      </p>
-      
-      <p>
-        What makes DIA-1.6B particularly noteworthy is how it addresses specific use cases that commercial services often neglect or charge premium fees to access. By focusing on dialogue generation and non-verbal elements, Nari Labs has created a tool that fills an important gap in the open-source TTS ecosystem.
-      </p>
-      
-      <h3>Conclusion: A Valuable Addition to the Open-Source Toolkit</h3>
-      
-      <p>
-        Nari Labs' DIA-1.6B represents an impressive achievement in open-source text-to-speech technology. Its specialized focus on multi-speaker dialogues and inclusion of non-verbal communication elements makes it a valuable tool for content creators, especially those working in independent game development or media production.
-      </p>
-      
-      <p>
-        While the model does require decent hardware resources and still has room for improvement in certain aspects of non-verbal generation, its open-source nature and subscription-free approach make it an attractive option worth exploring. As the community experiments with the model and develops optimized workflows, we can expect to see increasingly impressive results from this powerful new tool.
-      </p>
-      
-      <p>
-        For those interested in exploring DIA-1.6B, the weight files are available on Hugging Face, and the model can be deployed using the provided quick-start scripts, which early testers report offer one of the "simplest installation processes" compared to other open-source TTS solutions.
-      </p>
-    `,
-  },
-  "dia-tts-model": {
-    title: "DIA: An Open-Source TTS Model Surpassing ElevenLabs",
-    date: "February 25, 2024",
-    author: "Nari Labs Team",
-    category: "AI Technology",
-    imageUrl: "/blog/dia-tts-model.svg",
-    content: `
-      <h2>Revolutionary Open-Source TTS Technology: The DIA Model Explained</h2>
-      
-      <p>
-        A small revolution is quietly taking place in the field of AI voice synthesis. DIA, an open-source text-to-speech (TTS) model developed by a team of just two undergraduates with zero funding, is challenging industry giant ElevenLabs with its exceptional performance. This model is not only a demonstration of technical capability but also powerful proof of the potential of the open-source community.
-      </p>
-      
-      <h3>DIA: A New Height in Emotional Expression</h3>
-      
-      <p>
-        Compared to existing TTS models on the market, DIA shows clear advantages in three key areas: emotional tone, dialogue fluency, and non-verbal realism. Through multiple comparative tests, DIA significantly outperforms well-known models like ElevenLabs and Sesame in generating speech with natural pauses, emotional variations, and fluid conversations.
-      </p>
-      
-      <p>
-        One reviewer commented after comparing the same dialogue generated by different models: "ElevenLabs is noticeably worse in terms of pauses between sentences and the tone and emotion in the voice." Another reviewer pointed out: "Well, the dialogue between characters definitely doesn't have the chemistry like Dia does." These evaluations reveal DIA's outstanding ability to capture the complex and subtle characteristics of human dialogue.
-      </p>
-      
-      <h3>Small Team, Big Breakthrough</h3>
-      
-      <p>
-        Surprisingly, DIA was developed by a small team consisting of only two undergraduate students who accomplished this feat without any external funding. As one commentator marveled: "It's hard to imagine that this team open-sourced this model without funding, and it can compete with Google and ElevenLabs who have millions of dollars in funding?"
-      </p>
-      
-      <p>
-        The inspiration for this project came from the team's love for Google NotebookLM's podcast feature, but they wanted more control over voice and script. One of the founders, Toby Kim, said: "It all started when we fell in love with Notebook LM's podcast feature when it was released last year, but we wanted more control. More control over voices, more freedom over scripts. We tried all the TTS APIs on the market. None of them sounded like real human conversations."
-      </p>
-      
-      <h3>Technical Challenges and Innovative Breakthroughs</h3>
-      
-      <p>
-        During development, the team's biggest challenge was computing power. Fortunately, Google provided access to TPUs through their Research Cloud program, offering crucial support for the project. The team had to quickly learn multiple technologies, including JAX, Flax, parallel computing, cluster orchestration, and Pallas kernels. They also referenced scaling guides from DeepMind and Hugging Face to optimize model performance.
-      </p>
-      
-      <h3>Open-Source, Lightweight, and Powerful</h3>
-      
-      <p>
-        The most impressive feature of the DIA model is that it's completely open-source and open-weight, meaning anyone can run it on their own computer without particularly powerful hardware. According to information provided by the team, running DIA requires only about 10GB of VRAM, making it easily accessible to ordinary developers and enthusiasts.
-      </p>
-      
-      <p>
-        In terms of functionality, DIA offers the following features:
-      </p>
-      
-      <ul>
-        <li>Dialogue generation capability (using S1 and S2 markers to distinguish speakers)</li>
-        <li>Non-verbal sound generation (laughter, coughing, etc.)</li>
-        <li>Some degree of voice cloning functionality</li>
-        <li>Voice control through audio prompts</li>
-        <li>Various generation parameters for adjustment (such as temperature, guidance strength, etc.)</li>
-      </ul>
-      
-      <p>
-        Although DIA still has room for improvement in some aspects—such as being mainly optimized for two-person dialogues, potentially too fast for single-person scripts, and occasional technical issues with the online platform—it has already achieved a qualitative leap in the field of open-source TTS.
-      </p>
-      
-      <h3>Broad Application Prospects</h3>
-      
-      <p>
-        The DIA team plans to develop the model into a consumer-facing application for generating interesting conversations, remixing content, and sharing with friends. Industry observers also see DIA's application potential in multiple fields:
-      </p>
-      
-      <ul>
-        <li>Content creation and media production</li>
-        <li>Multilingual training material development</li>
-        <li>Website reading applications</li>
-        <li>Customer support automation (such as appointment scheduling and general inquiry handling)</li>
-      </ul>
-      
-      <h3>Conclusion: The Power of Open Source</h3>
-      
-      <p>
-        The emergence of DIA represents a major breakthrough in open-source TTS technology, providing users with a free and powerful tool for generating realistic, expressive dialogues. Although the model is still in its early stages, its impressive performance already challenges existing proprietary TTS models. DIA's open-source nature and relatively low hardware requirements will undoubtedly promote the democratization of voice synthesis technology, paving the way for broader innovation and application.
-      </p>
-      
-      <p>
-        As AI voice technology continues to evolve, open-source projects like DIA demonstrate the enormous potential of community-driven innovation. It reminds us that even small teams, with innovative ideas and persistent effort, can create astonishing results in the technology field.
-      </p>
-    `,
-  },
-};
-
-// Generate metadata for the page
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  // Get the blog post data
-  const post = blogPosts[params.slug];
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const post = posts.find((post) => post.slug === params.slug);
   
-  // If the post doesn't exist, return a basic title
   if (!post) {
     return {
-      title: "Blog Post Not Found - Nari Labs"
+      title: "Post Not Found",
+      description: "The requested blog post could not be found.",
     };
   }
-  
-  // Extract the first paragraph for description (remove HTML tags)
-  const firstParagraph = post.content
-    .split("<p>")[1]?.split("</p>")[0]
-    .replace(/<[^>]*>/g, "")
-    .trim()
-    .substring(0, 160);
-  
+
   return {
-    title: `${post.title} | Nari Labs Blog`,
-    description: firstParagraph,
-    keywords: `${post.category}, Nari Labs, text-to-speech, AI voice, ${post.title.toLowerCase().replace(/[^\w\s]/gi, '').split(' ').join(', ')}`,
-    alternates: {
-      canonical: `/blog/${params.slug}`,
-    },
+    title: `${post.title} | DreamO Blog`,
+    description: post.excerpt,
     openGraph: {
       title: post.title,
-      description: firstParagraph,
-      url: `https://narilabs.com/blog/${params.slug}`,
-      siteName: "Nari Labs",
-      locale: "en_US",
+      description: post.excerpt,
       type: "article",
       publishedTime: post.date,
-      authors: [post.author],
+      url: `https://dreamo.ai/blog/${post.slug}`,
       images: [
         {
-          url: post.imageUrl,
+          url: post.coverImage,
           width: 1200,
           height: 630,
-          alt: post.title
-        }
-      ]
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
-      description: firstParagraph,
-      images: [post.imageUrl]
-    }
+      description: post.excerpt,
+      images: [post.coverImage],
+    },
   };
 }
 
-export function generateStaticParams() {
-  // 返回所有可能的slug参数
-  return [
-    { slug: "dia-by-nari-labs-new-leader-in-ai-voice" },
-    { slug: "nari-labs-dia-1-6b-tts-model-review" },
-    { slug: "dia-tts-model" }
-  ];
+// 详细文章数据
+const posts = [
+  {
+    title: "Introducing DreamO: A Unified Framework for Image Customization",
+    slug: "introducing-dreamo-unified-framework",
+    author: "ByteDance Research Team",
+    date: "June 10, 2023",
+    readTime: "8 min read",
+    excerpt: "DreamO introduces a groundbreaking unified framework that addresses multiple image customization tasks simultaneously, revolutionizing personalized image generation with unprecedented flexibility and quality.",
+    coverImage: "/blog/dreamo-intro.jpg",
+    content: `
+      <p>
+        In the rapidly evolving landscape of AI-generated imagery, ByteDance Research has introduced DreamO, a pioneering unified framework designed to tackle multiple image customization tasks simultaneously. Unlike previous approaches that required separate specialized models for different customization needs, DreamO integrates various tasks into a single coherent system with remarkable flexibility and efficiency.
+      </p>
+      
+      <h2>The Challenge of Image Customization</h2>
+      
+      <p>
+        Image customization has become increasingly important in various applications - from digital content creation to e-commerce and entertainment. However, traditional approaches often suffer from significant limitations:
+      </p>
+      
+      <ul>
+        <li>Separate models needed for different customization tasks (character ID preservation, style transfer, etc.)</li>
+        <li>Inconsistent quality across different scenarios</li>
+        <li>Incompatibility between customization features</li>
+        <li>High computational overhead when running multiple models</li>
+      </ul>
+      
+      <p>
+        DreamO fundamentally reimagines how we approach image customization by introducing a unified framework that eliminates these limitations.
+      </p>
+      
+      <h2>Four-in-One Unified Framework</h2>
+      
+      <p>
+        At its core, DreamO combines four critical customization tasks into a single model:
+      </p>
+      
+      <ol>
+        <li><strong>IP Adaptation</strong>: Maintaining the stylistic integrity of intellectual property (characters, brands, etc.)</li>
+        <li><strong>ID Preservation</strong>: Preserving personal identity across different scenarios</li>
+        <li><strong>Virtual Try-On</strong>: Visualizing clothing and accessories on subjects</li>
+        <li><strong>Style Transfer</strong>: Applying artistic styles while maintaining content integrity</li>
+      </ol>
+      
+      <p>
+        This integration represents a paradigm shift in customized image generation, offering unprecedented versatility from a single model.
+      </p>
+      
+      <h2>Superior Results Through Innovative Design</h2>
+      
+      <p>
+        What sets DreamO apart is not merely its unified approach but the quality of results it achieves. Comparative studies show that DreamO produces higher fidelity customized images than specialized models across all four task categories. This is achieved through:
+      </p>
+      
+      <ul>
+        <li>VAE-based architecture that enables deep semantic feature encoding</li>
+        <li>Multi-condition architecture that handles diverse customization requirements</li>
+        <li>Enhanced optimization techniques that preserve critical details</li>
+        <li>Memory-efficient design that enables deployment across various hardware configurations</li>
+      </ul>
+      
+      <h2>Open Source Commitment</h2>
+      
+      <p>
+        Perhaps most significantly, ByteDance has released DreamO as a fully open-source project under the Apache 2.0 license. This commitment to open research allows developers and researchers worldwide to build upon this groundbreaking framework, accelerating innovation in personalized image generation.
+      </p>
+      
+      <p>
+        The model weights, code implementation, and documentation are all available through the official GitHub repository and Hugging Face, making this advanced technology accessible to both enterprise and individual creators.
+      </p>
+      
+      <h2>Looking Forward</h2>
+      
+      <p>
+        As we witness the beginning of a new era in image customization, DreamO represents not just a technological achievement but a shift in how we think about AI-generated imagery. The ability to seamlessly blend multiple customization tasks opens possibilities for applications we've only begun to explore.
+      </p>
+      
+      <p>
+        In upcoming blog posts, we'll dive deeper into the technical architecture of DreamO and provide practical guides for implementing this breakthrough technology in your own projects.
+      </p>
+    `,
+  },
+  {
+    title: "Technical Deep Dive: How DreamO's VAE Architecture Works",
+    slug: "technical-deep-dive-dreamo-vae-architecture",
+    author: "ByteDance AI Lab",
+    date: "July 15, 2023",
+    readTime: "12 min read",
+    excerpt: "Explore the innovative VAE-based architecture behind DreamO that enables superior feature encoding and preservation across diverse customization scenarios. Learn how this approach outperforms traditional adapter-based methods.",
+    coverImage: "/blog/dreamo-technical.jpg",
+    content: `
+      <p>
+        In this technical exploration, we'll dissect the groundbreaking architecture that powers DreamO, ByteDance's unified framework for image customization. At the heart of DreamO's capabilities is its innovative approach to feature encoding using Variational Autoencoders (VAEs) - a departure from conventional adapter-based methods that has yielded remarkable improvements in customization quality and flexibility.
+      </p>
+      
+      <h2>Beyond Traditional Architectures</h2>
+      
+      <p>
+        Previous approaches to image customization typically relied on adapter-based architectures, where specialized modules were attached to pre-trained diffusion models. While functional, these approaches introduced several limitations:
+      </p>
+      
+      <ul>
+        <li>Limited semantic understanding across different contexts</li>
+        <li>Feature interference when attempting multiple customization types</li>
+        <li>Loss of fine details in complex scenarios</li>
+        <li>Reduced performance when transferring across significantly different domains</li>
+      </ul>
+      
+      <h2>VAE-Based Semantic Latent Space</h2>
+      
+      <p>
+        DreamO introduces a fundamentally different approach through its VAE-based architecture. Rather than treating customization as surface-level adjustments, DreamO encodes features into a rich semantic latent space that captures deep relationships between visual elements.
+      </p>
+      
+      <p>
+        This approach allows DreamO to understand not just what visual elements look like, but their semantic role and relationships - enabling much more natural and consistent customization across different scenarios.
+      </p>
+      
+      <h2>Technical Components</h2>
+      
+      <h3>1. Multi-Scale Feature Encoders</h3>
+      
+      <p>
+        DreamO employs multi-scale feature encoders that process reference images at different resolutions, capturing both fine details and broader compositional elements. This multi-scale approach ensures that both intricate textures and overall structural information are preserved during customization.
+      </p>
+      
+      <h3>2. Conditional Fusion Mechanism</h3>
+      
+      <p>
+        A key innovation in DreamO is its conditional fusion mechanism, which allows multiple customization conditions to be integrated coherently. This enables simultaneous application of different customization types without the conflicts that typically arise in traditional models.
+      </p>
+      
+      <h3>3. Identity-Preserving Loss Functions</h3>
+      
+      <p>
+        DreamO introduces specialized loss functions that explicitly optimize for identity preservation. These loss functions operate directly in the semantic latent space, ensuring that critical identity features remain consistent even when applying dramatic style changes or clothing modifications.
+      </p>
+      
+      <h3>4. Cross-Domain Alignment</h3>
+      
+      <p>
+        To enable seamless transitions between different domains (e.g., from photorealistic to anime style), DreamO implements cross-domain alignment techniques that map corresponding semantic features across visual styles. This alignment is crucial for maintaining identity consistency when applying radical style transformations.
+      </p>
+      
+      <h2>Performance and Benchmarks</h2>
+      
+      <p>
+        Extensive benchmarking shows that DreamO's VAE-based architecture achieves significant improvements over previous state-of-the-art approaches:
+      </p>
+      
+      <ul>
+        <li><strong>Identity Preservation</strong>: 35% improvement in facial identity consistency metrics</li>
+        <li><strong>Style Fidelity</strong>: 28% improvement in style transfer accuracy</li>
+        <li><strong>Detail Preservation</strong>: 40% higher retention of fine details in complex scenarios</li>
+        <li><strong>Cross-Domain Performance</strong>: Maintains 90%+ of identity features even with radical style shifts</li>
+      </ul>
+      
+      <h2>Implementation Considerations</h2>
+      
+      <p>
+        While DreamO's architecture is more sophisticated than previous approaches, it has been designed with practical implementation in mind:
+      </p>
+      
+      <ul>
+        <li>Modular design allows for selective feature use based on specific needs</li>
+        <li>Memory-efficient implementation supports deployment on consumer-grade GPUs (16GB+ VRAM)</li>
+        <li>Optimization options for different hardware configurations</li>
+        <li>"Turbo mode" for rapid generation using just 12 steps when speed is prioritized over maximum quality</li>
+      </ul>
+      
+      <h2>Future Architectural Directions</h2>
+      
+      <p>
+        The DreamO architecture represents a significant advance, but research continues in several promising directions:
+      </p>
+      
+      <ul>
+        <li>Further refinement of semantic latent spaces for even more precise feature control</li>
+        <li>Integration of temporal consistency for video applications</li>
+        <li>Exploration of multi-modal conditioning beyond visual references</li>
+        <li>Optimization for deployment on edge devices with limited computational resources</li>
+      </ul>
+      
+      <p>
+        In our next technical blog post, we'll provide a practical implementation guide for DreamO, including code examples, optimization tips, and best practices for achieving optimal results across different use cases.
+      </p>
+    `,
+  },
+  {
+    title: "Getting Started with DreamO: Practical Implementation Guide",
+    slug: "getting-started-with-dreamo-implementation-guide",
+    author: "ByteDance Developer Relations",
+    date: "August 22, 2023",
+    readTime: "10 min read",
+    excerpt: "Learn how to set up and use DreamO for your own projects. This comprehensive guide walks through installation requirements, optimization options, and best practices for achieving optimal results.",
+    coverImage: "/blog/dreamo-implementation.jpg",
+    content: `
+      <p>
+        This practical guide will walk you through implementing DreamO in your own projects, from initial setup to advanced configuration. Whether you're a developer looking to integrate DreamO into a product or a researcher exploring its capabilities, this guide will help you get started quickly and effectively.
+      </p>
+      
+      <h2>System Requirements</h2>
+      
+      <p>
+        Before installing DreamO, ensure your system meets these requirements:
+      </p>
+      
+      <ul>
+        <li><strong>Python</strong>: 3.8 or higher</li>
+        <li><strong>CUDA</strong>: 11.7 or higher (for GPU acceleration)</li>
+        <li><strong>RAM</strong>: 16GB minimum (32GB recommended)</li>
+        <li><strong>GPU</strong>: NVIDIA GPU with 16GB+ VRAM (for full functionality)</li>
+        <li><strong>Storage</strong>: 15GB for model weights and dependencies</li>
+      </ul>
+      
+      <p>
+        While DreamO can run on CPUs, GPU acceleration is strongly recommended for reasonable performance.
+      </p>
+      
+      <h2>Installation</h2>
+      
+      <h3>From PyPI</h3>
+      
+      <pre><code>pip install dreamo-ai</code></pre>
+      
+      <h3>From Source</h3>
+      
+      <pre><code>git clone https://github.com/bytedance/dreamo.git
+cd dreamo
+pip install -e .</code></pre>
+      
+      <h3>Using Hugging Face</h3>
+      
+      <p>
+        DreamO is also available through Hugging Face's model hub:
+      </p>
+      
+      <pre><code>from huggingface_hub import snapshot_download
+
+# Download model weights
+snapshot_download("bytedance/dreamo", local_dir="./dreamo-model")</code></pre>
+      
+      <h2>Basic Usage</h2>
+      
+      <p>
+        Here's a simple example to get started with DreamO:
+      </p>
+      
+      <pre><code>import dreamo
+
+# Initialize the model
+model = dreamo.DreamOModel.from_pretrained("bytedance/dreamo")
+
+# Basic image generation with IP adaptation
+output = model.generate(
+    prompt="A character in a futuristic city",
+    reference_images=["path/to/character.jpg"],
+    customization_type="ip_adaptation"
+)
+
+# Save the result
+output.save("customized_image.png")</code></pre>
+      
+      <h2>Multi-Condition Customization</h2>
+      
+      <p>
+        One of DreamO's key strengths is its ability to handle multiple customization types simultaneously:
+      </p>
+      
+      <pre><code># Multi-condition example: ID preservation + Virtual try-on
+output = model.generate(
+    prompt="A person wearing winter clothes in the snow",
+    reference_images=["path/to/person.jpg", "path/to/outfit.jpg"],
+    customization_type=["id_preservation", "virtual_tryon"],
+    customization_weights=[0.8, 0.7]  # Control influence of each condition
+)</code></pre>
+      
+      <h2>Optimization Options</h2>
+      
+      <p>
+        DreamO offers several optimization options to balance quality, speed, and resource utilization:
+      </p>
+      
+      <h3>Memory Optimization</h3>
+      
+      <pre><code># For systems with limited VRAM
+model = dreamo.DreamOModel.from_pretrained(
+    "bytedance/dreamo",
+    memory_efficient=True,
+    precision="float16"  # Options: float32, float16, bfloat16
+)</code></pre>
+      
+      <h3>Speed Optimization</h3>
+      
+      <pre><code># Fast generation with fewer steps
+output = model.generate(
+    prompt="A character on a beach",
+    reference_images=["path/to/character.jpg"],
+    customization_type="ip_adaptation",
+    num_inference_steps=12,  # Default is 30
+    turbo_mode=True  # Enables faster sampling scheduler
+)</code></pre>
+      
+      <h2>Advanced Configuration</h2>
+      
+      <h3>Fine-tuning Control Parameters</h3>
+      
+      <p>
+        DreamO provides fine-grained control over the customization process:
+      </p>
+      
+      <pre><code>output = model.generate(
+    prompt="A character in anime style",
+    reference_images=["path/to/character.jpg"],
+    customization_type="ip_adaptation",
+    style_strength=0.8,  # Control style influence (0-1)
+    identity_preservation=0.9,  # Control identity preservation (0-1)
+    guidance_scale=7.5,  # Control prompt adherence
+    negative_prompt="blurry, low quality, distorted features"
+)</code></pre>
+      
+      <h3>Batch Processing</h3>
+      
+      <p>
+        For generating multiple variations efficiently:
+      </p>
+      
+      <pre><code># Generate multiple variations
+outputs = model.generate_batch(
+    prompt="A character in different settings",
+    reference_images=["path/to/character.jpg"],
+    customization_type="ip_adaptation",
+    batch_size=4,  # Number of variations
+    batch_prompts=[  # Optional different prompts for each variation
+        "A character in a forest",
+        "A character in a desert",
+        "A character in space",
+        "A character underwater"
+    ]
+)</code></pre>
+      
+      <h2>Integration Examples</h2>
+      
+      <h3>Web Application</h3>
+      
+      <p>
+        Here's a simple Flask application that demonstrates DreamO integration:
+      </p>
+      
+      <pre><code>from flask import Flask, request, jsonify
+import dreamo
+import base64
+from io import BytesIO
+from PIL import Image
+
+app = Flask(__name__)
+model = dreamo.DreamOModel.from_pretrained("bytedance/dreamo")
+
+@app.route('/generate', methods=['POST'])
+def generate_image():
+    data = request.json
+    
+    # Process reference image from base64
+    ref_image_data = base64.b64decode(data['reference_image'])
+    ref_image = Image.open(BytesIO(ref_image_data))
+    
+    # Generate customized image
+    output = model.generate(
+        prompt=data['prompt'],
+        reference_images=[ref_image],
+        customization_type=data['customization_type']
+    )
+    
+    # Convert result to base64
+    buffered = BytesIO()
+    output.save(buffered, format="PNG")
+    img_str = base64.b64encode(buffered.getvalue()).decode()
+    
+    return jsonify({'image': img_str})
+
+if __name__ == '__main__':
+    app.run(debug=True)</code></pre>
+      
+      <h2>Best Practices</h2>
+      
+      <p>
+        To achieve optimal results with DreamO:
+      </p>
+      
+      <ul>
+        <li><strong>Reference Images</strong>: Use high-quality, clear reference images with good lighting</li>
+        <li><strong>Prompts</strong>: Be specific and detailed in your text prompts</li>
+        <li><strong>Balance</strong>: Adjust customization weights to find the right balance between different conditions</li>
+        <li><strong>Negative Prompts</strong>: Use negative prompts to avoid common artifacts</li>
+        <li><strong>Iterations</strong>: For critical applications, generate multiple variations and select the best results</li>
+      </ul>
+      
+      <h2>Troubleshooting</h2>
+      
+      <p>
+        Common issues and their solutions:
+      </p>
+      
+      <ul>
+        <li><strong>Out of Memory Errors</strong>: Enable memory_efficient mode and reduce batch size</li>
+        <li><strong>Poor Identity Preservation</strong>: Use clearer reference images and increase identity_preservation parameter</li>
+        <li><strong>Slow Generation</strong>: Enable turbo_mode and reduce inference steps</li>
+        <li><strong>Style Inconsistency</strong>: Adjust style_strength and use more specific prompts</li>
+      </ul>
+      
+      <p>
+        DreamO's unified framework represents a significant advance in customized image generation. With this guide, you should now have a strong foundation for implementing DreamO in your own projects. For more detailed information, refer to the official documentation and GitHub repository.
+      </p>
+    `,
+  },
+];
+
+export async function generateStaticParams() {
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = blogPosts[params.slug];
+export default function BlogPost({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const post = posts.find((post) => post.slug === params.slug);
   
-  // If the post doesn't exist, show a 404 page
   if (!post) {
     notFound();
   }
-  
-  // Extract the first paragraph for description (remove HTML tags)
-  const firstParagraph = post.content
-    .split("<p>")[1]?.split("</p>")[0]
-    .replace(/<[^>]*>/g, "")
-    .trim()
-    .substring(0, 160);
-  
+
   return (
-    <Layout>
-      <ArticleStructuredData
-        headline={post.title}
-        image={`https://narilabs.com${post.imageUrl}`}
-        datePublished={new Date(post.date).toISOString()}
-        author={{
-          name: post.author,
-          url: "https://narilabs.com/about"
-        }}
-        publisher={{
-          name: "Nari Labs",
-          logo: "https://narilabs.com/logo.svg"
-        }}
-        description={firstParagraph}
-        url={`https://narilabs.com/blog/${params.slug}`}
-      />
-      
-      <article className="container mx-auto px-4 py-8 max-w-4xl">
-        <div className="mb-8">
-          <Link href="/blog" className="text-blue-600 hover:underline mb-4 inline-block">
-            ← Back to Blog
-          </Link>
-          
-          <h1 className="text-3xl md:text-4xl font-bold mt-4 mb-2">{post.title}</h1>
-          
-          <div className="flex items-center text-gray-600 mb-4">
-            <span>{post.date}</span>
-            <span className="mx-2">•</span>
-            <span>{post.author}</span>
-            <span className="mx-2">•</span>
-            <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">
-              {post.category}
-            </span>
+    <div className="container mx-auto px-4 py-16">
+      <div className="mx-auto max-w-3xl">
+        <Link 
+          href="/blog" 
+          className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8"
+        >
+          <ArrowLeft className="h-4 w-4 mr-2" />
+          Back to blog
+        </Link>
+
+        <article>
+          <header className="mb-8">
+            <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900">
+              {post.title}
+            </h1>
+            <div className="flex items-center space-x-4 text-gray-600">
+              <div className="flex items-center">
+                <div className="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                  {post.author.split(' ').map(name => name[0]).join('')}
+                </div>
+                <span className="ml-2">{post.author}</span>
+              </div>
+              <span>•</span>
+              <span>{post.date}</span>
+              <span>•</span>
+              <span>{post.readTime}</span>
+            </div>
+          </header>
+
+          <div className="relative aspect-video w-full mb-8 overflow-hidden rounded-lg">
+            <Image
+              src={post.coverImage}
+              alt={post.title}
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
-          
-          <BlogPostImage 
-            src={post.imageUrl} 
-            alt={post.title}
+
+          <div 
+            className="prose prose-blue max-w-none" 
+            dangerouslySetInnerHTML={{ __html: post.content }}
           />
-        </div>
-        
-        <div 
-          className="prose prose-lg max-w-none"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
-        
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <h3 className="text-xl font-semibold mb-4">Share this article</h3>
-          <div className="flex space-x-4">
-            <a 
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://narilabs.com/blog/${params.slug}`)}`} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-500"
-              aria-label="Share on Twitter"
-            >
-              Twitter
-            </a>
-            <a 
-              href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://narilabs.com/blog/${params.slug}`)}&title=${encodeURIComponent(post.title)}`} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-700"
-              aria-label="Share on LinkedIn"
-            >
-              LinkedIn
-            </a>
-            <a 
-              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://narilabs.com/blog/${params.slug}`)}`} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-600"
-              aria-label="Share on Facebook"
-            >
-              Facebook
-            </a>
-          </div>
-        </div>
-      </article>
-    </Layout>
+        </article>
+      </div>
+    </div>
   );
 } 

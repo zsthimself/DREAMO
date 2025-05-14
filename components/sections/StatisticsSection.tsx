@@ -3,28 +3,28 @@ import StatItem from "../ui/StatItem";
 const StatisticsSection = () => {
   const stats = [
     {
-      value: "1.6B",
-      label: "Parameters in the Nari Labs Dia Model",
+      value: "4-in-1",
+      label: "Unified Tasks in the DreamO Framework",
     },
     {
-      value: "40+",
-      label: "Tokens Generated Per Second by Nari Labs",
+      value: "16GB+",
+      label: "VRAM Support with Optimization Options",
     },
     {
       value: "100%",
-      label: "Nari Labs Open-Source Under Apache 2.0",
+      label: "DreamO Open-Source Under Apache 2.0",
     },
     {
-      value: "0",
-      label: "External Funding Required by Nari Labs",
+      value: "12",
+      label: "Steps for Fast Image Generation with Turbo Mode",
     },
   ];
 
   return (
-    <section className="bg-indigo-600 py-20 text-white">
+    <section className="bg-blue-600 py-20 text-white">
       <div className="container mx-auto px-4">
         <h2 className="mb-16 text-center text-4xl font-bold text-white">
-          Nari Labs by the Numbers
+          DreamO by the Numbers
         </h2>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

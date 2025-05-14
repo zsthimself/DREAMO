@@ -1,52 +1,55 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { OptimizedCoverImageClient } from "@/components/ui/optimized-image";
-
-interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  imageUrl: string;
-  category: string;
-}
+import { Card, CardContent } from "../ui/card";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 interface BlogCardProps {
-  post: BlogPost;
-  isPriority?: boolean;
+  title: string;
+  slug: string;
+  image: string;
+  date: string;
+  readTime: string;
+  excerpt: string;
 }
 
-export default function BlogCard({ post, isPriority = false }: BlogCardProps) {
+const BlogCard = ({
+  title,
+  slug,
+  image,
+  date,
+  readTime,
+  excerpt,
+}: BlogCardProps) => {
   return (
-    <article className="flex flex-col bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-      <OptimizedCoverImageClient 
-        src={post.imageUrl} 
-        alt={post.title}
-        containerClassName="h-48"
-        priority={isPriority}
-      />
-      <div className="relative">
-        <span className="absolute top-0 -mt-3 left-3 bg-blue-500 text-white text-xs font-medium px-2.5 py-1 rounded">
-          {post.category}
-        </span>
-      </div>
-      
-      <div className="flex-1 p-5">
-        <p className="text-sm text-gray-500 mb-2">{post.date}</p>
-        <h2 className="text-xl font-semibold mb-3 line-clamp-2">
-          {post.title}
-        </h2>
-        <p className="text-gray-600 mb-4 line-clamp-3">
-          {post.excerpt}
-        </p>
-        <Link href={`/blog/${post.id}`} className="inline-block">
-          <Button variant="outline" size="sm">
-            Read More
-          </Button>
-        </Link>
-      </div>
-    </article>
+    <Link href={`/blog/${slug}`}>
+      <Card className="overflow-hidden rounded-lg border border-gray-200 transition-all duration-300 hover:border-blue-500 hover:shadow-lg">
+        <div className="aspect-video relative overflow-hidden">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover transition-transform duration-500 hover:scale-105"
+          />
+        </div>
+        <CardContent className="p-6">
+          <div className="mb-3 flex items-center space-x-2 text-sm text-gray-500">
+            <span>{date}</span>
+            <span>•</span>
+            <span>{readTime}</span>
+          </div>
+          <h3 className="mb-3 text-xl font-bold text-gray-900 line-clamp-2">
+            {title}
+          </h3>
+          <p className="mb-4 text-gray-600 line-clamp-3">{excerpt}</p>
+          <div className="flex items-center text-blue-600 font-medium">
+            Read more <ArrowRight className="ml-2 h-4 w-4" />
+          </div>
+        </CardContent>
+      </Card>
+    </Link>
   );
-} 
+};
+
+export default BlogCard; 

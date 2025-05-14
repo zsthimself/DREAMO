@@ -4,33 +4,33 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       content:
-        "Nari Labs Dia has completely transformed our audiobook production process. We can generate character voices that sound incredibly natural with Nari Labs technology, with emotional depth that was previously impossible without professional voice actors. The technology from Nari Labs has cut our production time in half while improving quality with Nari Labs Dia.",
+        "DreamO has revolutionized our character design workflow. We can generate consistent character appearances across different poses and scenarios with incredible fidelity. The unified framework allows us to experiment with clothing and style variations without losing character identity. DreamO has cut our design iteration time by 60% while significantly improving quality.",
       author: "Sarah Johnson",
-      role: "Digital Content Producer using Nari Labs",
+      role: "Digital Content Creator",
       rating: 5,
       initials: "SJ"
     },
     {
       content:
-        "The voice cloning capabilities of Nari Labs Dia are remarkable. With just a 10-second sample, we created a virtual assistant that perfectly matches our brand voice using Nari Labs. The real-time performance of Nari Labs means we can integrate it into our customer service platform without any latency issues. Nari Labs technology is truly revolutionary.",
+        "The multi-condition capabilities of DreamO are remarkable. We can combine ID preservation with virtual try-on features to create personalized marketing visuals that perfectly match our brand aesthetic. The optimization for consumer GPUs means our entire design team can use DreamO without requiring specialized hardware. This technology is truly game-changing for our creative process.",
       author: "Michael Thompson",
-      role: "Technology Director partnering with Nari Labs",
+      role: "Creative Director",
       rating: 5,
       initials: "MT"
     },
     {
       content:
-        "As a game developer, I use Nari Labs Dia to generate dynamic NPC dialogue that responds to player actions. The emotional range and natural speech patterns from Nari Labs make characters feel alive in ways that weren't possible before. Nari Labs has created something truly revolutionary for interactive storytelling with their Nari Labs Dia technology.",
+        "As a game developer, I use DreamO to rapidly prototype character variations and outfit designs. The high-fidelity IP adaptation makes characters instantly recognizable while allowing for creative flexibility. Being able to run the model with 8-bit quantization on our existing hardware has made advanced AI image generation accessible to our entire indie team.",
       author: "David Lee",
-      role: "Game Developer implementing Nari Labs",
+      role: "Game Developer",
       rating: 5,
       initials: "DL"
     },
     {
       content:
-        "The open-source nature of Nari Labs Dia has allowed our research team to adapt the Nari Labs model for accessibility applications. We're creating tools for people with speech impairments that preserve their vocal identity with Nari Labs technology. The support from Nari Labs has been exceptional throughout our implementation of Nari Labs Dia.",
+        "The open-source nature of DreamO has allowed our research team to build specialized applications for assisted design tools. We're creating interfaces that help designers with limited artistic skills to generate professional-quality visuals. ByteDance's documentation and support have been excellent throughout our implementation process.",
       author: "Emma Rodriguez",
-      role: "Accessibility Researcher collaborating with Nari Labs",
+      role: "UX Research Lead",
       rating: 5,
       initials: "ER"
     },
@@ -40,7 +40,7 @@ const TestimonialsSection = () => {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="mb-16 text-center text-3xl font-bold text-gray-900 md:text-4xl">
-          What Users Say About Nari Labs
+          What Users Say About DreamO
         </h2>
 
         <div className="grid gap-8 md:grid-cols-2">

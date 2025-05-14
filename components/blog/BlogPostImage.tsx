@@ -1,19 +1,31 @@
 "use client";
 
-import { OptimizedCoverImageClient } from "@/components/ui/optimized-image";
+import Image from "next/image";
 
 interface BlogPostImageProps {
   src: string;
   alt: string;
+  caption?: string;
 }
 
-export default function BlogPostImage({ src, alt }: BlogPostImageProps) {
+const BlogPostImage = ({ src, alt, caption }: BlogPostImageProps) => {
   return (
-    <OptimizedCoverImageClient 
-      src={src} 
-      alt={alt}
-      containerClassName="w-full h-[400px] rounded-lg overflow-hidden"
-      priority
-    />
+    <figure className="my-8">
+      <div className="relative aspect-video w-full overflow-hidden rounded-lg border border-gray-200">
+        <Image 
+          src={src} 
+          alt={alt} 
+          fill 
+          className="object-cover"
+        />
+      </div>
+      {caption && (
+        <figcaption className="mt-2 text-center text-sm text-gray-500">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
   );
-} 
+};
+
+export default BlogPostImage; 
